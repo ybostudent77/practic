@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="assets/css/all.css" rel="stylesheet"> <!--load all styles -->
+  <script defer src="assets/js/all.js"></script> <!--load all styles -->
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Практика 4</title>
+  <style>
+    img{
+      width : 100px;
+      float: left;
+    }
+    p.header{
+      font-weight: bold;
+    }
+    .header {
+      width: 100%; /* ширина буде у всю ширину батьківського елементу */
+      max-width: 1180px; /* максимальна ширина */
+      margin: 0 auto; /* для розміщення по центру */
+      margin-top: 30px;
+      display: flex; /* буде контейнером для всіх елементів шапки */
+      justify-content: space-between; /* рівномірно розподіляє всі елементи по ширині flex-блоку. Перший елемент спочатку, останній в кінці(дивимось підказку по flexbox з лекції)*/
+      align-items: center; /* вирівнюємо елементу за центром */
+      box-sizing: border-box; /* ширина border не додається в ширину елементу */
+    }
+    .nav {
+      display: flex;
+      list-style-type: none; /* прибираємо вигляд списку за замовчування */
+      justify-content: flex-start;
+      font-size: 14px;
+      align-items: center;
+    }
+
+    .nav>li{
+      margin-left: 15px; /* всім дочірнім елементам класу nav відступ праворуч 15px*/
+    }
+
+    .nav>li>a{
+      text-decoration: none;
+      color: #202020;
+      font-weight: 700;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .logo img {
+      display: block;
+      width: 100px;
+      height: 100px;
+    }
+
+    .logo span {
+      font-size: 24px;
+      color: #202020;
+      font-weight: 700;
+    }
+    .nav .button {
+      background: #5B9AFF;
+      border-radius: 5px;
+      color: #FFFFFF ;
+      font-weight: bold;
+      padding: 5px 15px;
+      border: none;
+    }
+
+    .page .button{
+      background: #5B9AFF;
+      border-radius: 10px;
+      color: #FFFFFF;
+      padding: 10px 30px;
+      font-weight: normal;
+      font-size: 24px;
+      border: none;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    .page-top {
+      border-top: 1px solid #C2C2C2;
+    }
+    .page{
+      padding-top: 60px;
+      padding-bottom: 60px;
+      position: relative;
+
+    }
+
+    .wrap{
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+    .page h2 {
+      position: absolute;
+      font-size: 14px;
+      font-weight: 300;
+      color: #C2C2C2;
+      top: -30px; /* це значення підберіть використовуючи dev tools */
+      background: none;
+      padding: 0 20px;
+    }
+    .page h1 {
+      font-size: 48px;
+      color: #202020;
+      font-weight: bold;
+
+    }
+    .page .hero-text{
+      width: 741px;
+      font-size: 32px;
+      color: #4f4f4f;
+      font-weight: normal;
+      line-height: 51px;/* висота міжрядкового інтервалу, беремо з фігми*/
+    }
+    .departments{
+      display: grid;
+      grid-template-rows: 50% 50%;
+      grid-template-columns: 50% 50%;
+      grid-row-gap: 20px; /*простір між рядками*/
+    }
+    .page h3{
+      font-size: 22px;
+      color: #000000;
+      font-weight: bold;
+    }
+    .page p{
+      font-size: 14px;
+      font-weight: normal;
+      color: #b2b2b2;
+
+    }
+    .dep-item {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .dep-item .img{
+      flex-basis: 140px; /* базовий розмір флекс елементу */
+      text-align: center;
+    }
+    .dep-item .text{
+      flex-basis: calc(100% - 140px); /* розміри в css можна обчислювати за допомоги функцій calc*/
+    }
+
+
+    .page2-top {
+      border-top: 1px solid #C2C2C2;
+    }
+    .page2{
+      padding-top: 60px;
+      padding-bottom: 60px;
+      position: relative;
+
+    }
+
+    .wrap2{
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+    .teachers{
+      display: grid;
+      grid-template-rows: 50% 50%;
+      grid-template-columns: 33.3% 33.3% 33.3%;
+      grid-row-gap: 30px
+    }
+    .page2 h2 {
+      position: absolute;
+      font-size: 14px;
+      font-weight: 300;
+      color: #C2C2C2;
+      top: -30px; /* це значення підберіть використовуючи dev tools */
+      background: none;
+      padding: 0 20px;
+    }
+    .page2 h3{
+      font-size: 28px;
+      color: #202020;
+      font-weight: bold;
+    }
+
+    .page2 p{
+      font-size: 14px;
+      font-weight: normal;
+      color: #b2b2b2;
+      line-height: 16px;
+    }
+    .teach-item {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+    }
+
+    .teach-item .img{
+      flex-basis: 140px; /* базовий розмір флекс елементу */
+      text-align: center;
+      border-radius: 90%;
+    }
+    .teach-item .text{
+      flex-basis: calc(100% - 140px); /* розміри в css можна обчислювати за допомоги функцій calc*/
+    }
+
+
+    footer{
+      background-color: #F7F7F7;
+    }
+
+    .footer{
+      padding-top: 20px;
+      padding-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .social{
+      display: flex;
+      list-style-type: none;
+    }
+    .social li{
+      margin-right: 20px;
+    }
+    .social a{
+      text-decoration: none;
+      color: #B2B2B2;
+      font-size: 24px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+<header>
+  <div class="header">
+    <a href="" class="logo">
+      <img src="assets/img/logo (1).jpg" alt="logo">
+      <span>DEPARTMENT</span>
+    </a>
+    <nav>
+      <ul class="nav">
+        <li><a href="">Студентам</a></li>
+        <li><a href="">Викладачам</a></li>
+        <li><a href="">Адміністрація</a></li>
+        <li><button class="button" type="button">Вступити</button></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="page">
+  <div class="wrap">
+    <h1>Шановні абітурієнти!</h1>
+    <p class="hero-text"
+    >Ви зараз стоїте перед найважливішим вибором<br> кожної людини — чому присвятити своє життя,<br> яку обрати професію, як перетворити її на<br> улюблену справу.</p>
+    <button type="button" class="button"
+    >Вступити</button>
+  </div>
+</div>
+
+<div class="page page-top">
+  <div class="wrap">
+    <h2>КАФЕДРИ</h2>
+    <div class="departments">
+      <div class="dep-item">
+        <div class="img"><img src="assets/img/Group.svg" alt="security"></div>
+        <div class="text">
+          <h3>Безпеки інформаційних систем</h3>
+          <p>Підготовка фахівців і проведення наукових<br> досліджень в галузі комплексного захисту<br> складних інформаційних та комунікаційних<br> систем.</p>
+        </div>
+      </div>
+      <div class="dep-item">
+        <div class="img"><img src="assets/img/Vector (1).svg" alt="modeling"></div>
+        <div class="text">
+          <h3>Електроніки і управляючих систем</h3>
+          <p>Основні напрями наукових досліджень<br> — інформаційно-вимірювальні управляючі<br> системи.</p>
+        </div>
+      </div>
+      <div class="dep-item">
+        <div class="img"><img src="assets/img/Vector.svg" alt="electronics"></div>
+        <div class="text">
+          <h3>Моделювання систем і технологій</h3>
+          <p>Наукова діяльність викладачів та студентів<br> кафедри сконцентрована у таких<br> напрямках як розробка та дослідження<br> нових моделей, методів і програмних<br> засобів для створення  інтелектуальних<br> інформаційних систем і технологій</p>
+        </div>
+      </div>
+      <div class="dep-item">
+        <div class="img"><img src="assets/img/Group (1).svg" alt="art int"></div>
+        <div class="text">
+          <h3>Штучного інтелекту та пз</h3>
+          <p>Основні напрямки наукових досліджень<br>: експертні системи, загальні питання опису<br> інформаційних технологічних систем,<br> фундаментальні дослідження в теорії<br> інформації.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+<div class="page2 page2-top">
+  <div class="wrap2">
+    <h2>ВИКЛАДАЧІ</h2>
+    <div class="teachers">
+      <div class="teach-item">
+        <div class="img"><img src="assets/img/www-csd.univer.kharkov 1.png" alt="t1"></div>
+        <div class="text">
+          <h3>Рассомахін С.Г.</h3>
+          <p>Завідувач кафедрою, доктор<br> технічних наук, доцент
+          </p>
+        </div>
+      </div>
+      <div class="teach-item">
+        <div class="img"><img src="assets/img/www-csd.univer.kharkov 2.png" alt="t2"></div>
+        <div class="text">
+          <h3>Стєрвоєдов М.Г.</h3>
+          <p>Завідувач кафедри<br> електроніки і управляючих<br> систем, доцент, кандидат<br> технічних наук</p>
+        </div>
+      </div>
+      <div class="teach-item">
+        <div class="img"><img src="assets/img/www-csd.univer.kharkov 3.png" alt="t3"></div>
+        <div class="text">
+          <h3>Ткачук М.В.</h3>
+          <p>Завідувач кафедрою, доктор<br> технічних наук, професор<br> кафедри моделювання<br> систем і технологій
+          </p>
+        </div>
+      </div>
+      <div class="teach-item">
+        <div class="img"><img src="assets/img/www-csd.univer.kharkov 4 (1).png" alt="t4"></div>
+        <div class="text">
+          <h3>Куклін В.М.</h3>
+          <p>Завідувач кафедри штучного<br> інтелекту та програмного<br> забезпечення, професор,<br> доктор фізико-математичних<br> наук
+          </p>
+        </div>
+      </div>
+      <div class="teach-item">
+        <div class="img"><img src="assets/img/www-csd.univer.kharkov 5.png" alt="t5"></div>
+        <div class="text">
+          <h3>Шматков С.І.</h3>
+          <p>Завідувач кафедрою, доктор<br> технічних наук, профессор,<br> академік АНПРЕ
+          </p>
+        </div>
+      </div>
+      <div class="teach-item">
+        <div class="img"><img src="assets/img/IMG_4651ff 1.png" alt="t6"></div>
+        <div class="text">
+          <h3>Лазурик В.Т.</h3>
+          <p>Доктор фізико-математичних<br> наук, професор кафедри<br> моделювання систем і<br> технологій, декан ФКН
+
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+<footer>
+  <div class="wrap">
+    <div class="footer">
+      <a href="" class="logo-footer">
+        <img src="assets/img/logo.svg" alt="logo-footer">
+
+      </a>
+
+      <ul class="social">
+        <li><a href="" target="_blank"><i class="fab fa-github"></i></a></li>
+        <li><a href="" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+        <li><a href="" target="_blank"><i class="fab fa-codepen"></i></a></li>
+      </ul>
+    </div>
+  </div>
+
+</footer>
+
+
+
+
+</body>
+</html>
