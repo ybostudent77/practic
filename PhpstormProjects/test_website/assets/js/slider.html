@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Slider</title>
+    <script>
+        window.onload = function() {
+            // ви можете зробити скільки завгодно слайдів
+            let slides = [
+                {
+                    title: "Google",
+                    background: "https://via.placeholder.com/500x150",
+                    link: "https://google.com"
+                }, {
+                    title: "Yahoo",
+                    background: "https://via.placeholder.com/500x150",
+                    link: "https://yahoo.com"
+                },{
+                    title: "Metalist",
+                    background: "https://metalist.ua/files/news/8512-3.jpg",
+                    link: "https://metalist.ua"
+                }
+            ]
+            Slider.initSlider(slides);
+        };
+
+    </script>
+</head>
+<body>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../js/script.js">
+<link rel="stylesheet" href="../css/layout.css">
+<a href="http://localhost:63342/test_website/assets/js/media.html?_ijt=iadecp9u70jncjdiollargrks2">Media</a>
+<div class="container">
+    <main class="center column">
+        <div id="slider"></div>
+        <script src="script.js"></script>
+        <article>
+            <h1>Slider</h1>
+            <button class="Button1" onclick="Slider.prevSlide()">Prev</button>
+            <button class="Button2" onclick="Slider.nextSlide()">Next</button>
+            <div id="Button3-4" style="float: right;"></div>
+            <button class="Button3" onclick="Slider.hideControl()">Скрыть</button>
+            <button class="Button4" onclick="Slider.showControl()">Показать</button>
+            <button class="SlideShow">STOP</button>
+            <p></p>
+        </article>
+    </main>
+    <nav class="left column">
+        <ul>
+            <li><a href="./media.html">Media</a></li>
+            <li><a href="./slider.html">Slider</a></li>
+            <li><a href="./table.html">Table</a></li>
+            <li><a href="./contact.html">Contact us</a></li>
+            <li><a href="./about.html">About us</a></li>
+        </ul>
+        <h3>Left heading</h3>
+        <ul>
+            <li><a href="#">Link 1</a></li>
+        </ul>
+    </nav>
+    <div class="right column">
+        <h3>Right heading</h3>
+        <p></p>
+    </div>
+    <div class="push"></div>
+</div>
+<div class="footer-wrapper">
+    <footer class="footer"><p><img src="https://upload.wikimedia.org/wikipedia/ru/thumb/c/c2/FC_Metalist_Kharkiv_Logo.svg/1200px-FC_Metalist_Kharkiv_Logo.svg.png" alt="Footer" height="100"></p></footer>
+</div>
+</body>
+</html>
+
+
+
+
